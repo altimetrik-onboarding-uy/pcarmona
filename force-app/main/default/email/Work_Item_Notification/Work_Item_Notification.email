@@ -1,0 +1,19 @@
+<messaging:emailTemplate subject="Work Item {!relatedTo.Work_Item_Name__c} Assigned to you" recipientType="Contact" relatedToType="Work_Item__c">
+<messaging:plainTextEmailBody >
+Hello {!recipient.Name}
+
+Work Item {!relatedTo.Work_Item_Name__c} was assigned to you.
+
+Title: {!relatedTo.Name}.
+
+Description: {!relatedTo.Description__c}.
+
+You can see the work item using the following link:
+
+https://pcarmona-dev-ed.lightning.force.com/lightning/r/Work_Item__c/{!relatedTo.Id}/view
+
+Please do not reply to this email.
+
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>
