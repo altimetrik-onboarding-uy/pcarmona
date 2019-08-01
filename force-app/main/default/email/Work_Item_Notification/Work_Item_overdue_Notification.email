@@ -1,0 +1,12 @@
+<messaging:emailTemplate subject="Overdue work items" recipientType="User" >
+
+<messaging:htmlEmailBody >
+<p>Dear {!recipient.name},</p>
+<p>The following Work Items are overdue:</p>
+
+<c:WIListForEmail />
+
+<p>Please do no reply to this email.</p>
+</messaging:htmlEmailBody>
+
+</messaging:emailTemplate>
