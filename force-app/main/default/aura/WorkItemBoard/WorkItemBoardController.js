@@ -7,7 +7,6 @@
             
             if(state === "SUCCESS") {
                 var result = response.getReturnValue();
-                console.log(result.wItems);
                 component.set("v.columns", result.statusColumns);
                 component.set("v.rows", result.wItems);
             }
