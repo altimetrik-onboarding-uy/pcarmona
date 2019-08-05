@@ -1,0 +1,9 @@
+<messaging:emailTemplate subject="A neew post needs to be approved" recipientType="User" relatedToType="Post__c">
+<messaging:plainTextEmailBody >
+Dear {!recipient.Name},
+
+A new post {!relatedTo.Name} needs your approval.
+
+Please do not reply to this email.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

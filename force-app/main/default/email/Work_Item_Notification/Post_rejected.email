@@ -1,0 +1,10 @@
+<messaging:emailTemplate subject="Your post was rejected" recipientType="Contact" relatedToType="Post__c">
+<messaging:plainTextEmailBody >
+Dear {recipient.Name},
+
+Your post {!relatedTo.Name} was rejected.
+Please take a look to the post.
+
+Please do not reply to this email.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

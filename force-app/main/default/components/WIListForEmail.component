@@ -1,0 +1,26 @@
+<apex:component controller="WIListForEmailController" access="global">
+    <apex:dataTable value="{!wItems}" var="wItem" width="80%" columnsWidth="25%" border="6px">
+        <apex:column >
+            <apex:facet name="header">Title</apex:facet>
+            <apex:outputText value="{!wItem.name}"/>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Work Item Type</apex:facet>
+            <apex:outputText value="{!wItem.RecordType.Name}"/>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Status</apex:facet>
+            <apex:outputText value="{!wItem.Status__c}"/>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Estimated end date</apex:facet>
+            <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                <apex:param value="{!wItem.Estimated_End_date__c}" /> 
+            </apex:outputText>
+        </apex:column>
+    </apex:dataTable>
+    <p>
+        <b>Total overdue items: </b>
+        <apex:outputText value="{!wItems.size}"></apex:outputText>
+    </p>
+</apex:component>
