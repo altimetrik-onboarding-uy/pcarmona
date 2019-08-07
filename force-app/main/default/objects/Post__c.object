@@ -128,11 +128,14 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Post_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -176,9 +179,10 @@
         <fullName>Content__c</fullName>
         <externalId>false</externalId>
         <label>Content</label>
-        <required>false</required>
+        <length>131072</length>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
     </fields>
     <fields>
         <fullName>Published_Date__c</fullName>
@@ -206,11 +210,6 @@
                     <label>Draft</label>
                 </value>
                 <value>
-                    <fullName>Published</fullName>
-                    <default>false</default>
-                    <label>Published</label>
-                </value>
-                <value>
                     <fullName>Under Review</fullName>
                     <default>false</default>
                     <label>Under Review</label>
@@ -219,6 +218,11 @@
                     <fullName>Ready</fullName>
                     <default>false</default>
                     <label>Ready</label>
+                </value>
+                <value>
+                    <fullName>Published</fullName>
+                    <default>false</default>
+                    <label>Published</label>
                 </value>
             </valueSetDefinition>
             <valueSettings>
@@ -231,11 +235,11 @@
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>checked</controllingFieldValue>
-                <valueName>Published</valueName>
+                <valueName>Ready</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>checked</controllingFieldValue>
-                <valueName>Ready</valueName>
+                <valueName>Published</valueName>
             </valueSettings>
         </valueSet>
     </fields>
