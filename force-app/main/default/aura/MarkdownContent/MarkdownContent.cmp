@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId"  controller="MarkdownContentController" access="global" >
+    
+    <ltng:require scripts="{!$Resource.markedJS}" styles="{!$Resource.githubMarkdownCSS}"></ltng:require>
+    
+    <aura:attribute name="myText" type="String" />
+    <aura:attribute name="markdownText" type="String" default=""></aura:attribute>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <button class="slds-button slds-button_brand" onclick="{!c.submitReview}">Submit for review</button>
+    <lightning:card title="Markdown Editor">
+        <hr/>
+        <div class="slds-grid slds-m-horizontal_xx-small">
+            <div class="slds-col slds-size_6-of-12">
+                <lightning:textarea label="Enter Markdown Text Here" name="myTextArea" value="{!v.myText}" onchange="{!c.convertText}"/>
+            </div>
+            <div class="slds-col slds-size_6-of-12">
+                <div class="markdown-body">
+                    <aura:unescapedHtml value="{!v.markdownText}" />
+                </div>
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>

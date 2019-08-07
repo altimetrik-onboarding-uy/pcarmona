@@ -1,0 +1,27 @@
+<aura:component>
+    <aura:attribute name="record" type="Work_Item__c"/>
+    
+    <lightning:card footer="{! 'Difficulty: ' + v.record.Difficulty_Level__c}">
+        <aura:set attribute="title">
+            <a onclick="{!c.doEdit}">{!v.record.Name}</a>
+        </aura:set>
+        <aura:set attribute="actions">
+            <button class="slds-button slds-button_brand" onclick="{!c.doEdit}">Edit</button>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <aura:if isTrue="{!v.record.RecordType.Name == 'Fix'}">
+                <lightning:icon iconName="custom:custom19" alternativeText="{! 'Work Item Type: ' + v.record.RecordType.Name}" />
+            </aura:if>
+            <aura:if isTrue="{!v.record.RecordType.Name == 'Action'}">
+                <lightning:icon iconName="custom:custom44" alternativeText="{! 'Work Item Type: ' + v.record.RecordType.Name}" />
+            </aura:if>
+            <aura:if isTrue="{!v.record.RecordType.Name == 'Idea'}">
+                <lightning:icon iconName="custom:custom74" alternativeText="{! 'Work Item Type: ' + v.record.RecordType.Name}" />
+            </aura:if>
+        </p>
+        <p class="slds-p-horizontal_small">
+            {!v.record.RecordType.Name}
+        </p>
+    </lightning:card>
+    
+</aura:component>
