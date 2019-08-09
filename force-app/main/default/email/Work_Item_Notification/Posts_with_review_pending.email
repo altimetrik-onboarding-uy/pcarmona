@@ -1,0 +1,11 @@
+<messaging:emailTemplate subject="You have posts submitted for review pending" recipientType="User" >
+
+<messaging:htmlEmailBody >
+<p>Dear {!recipient.Name},</p>
+<p>Some post reviews assigned to you are still with review pending:</p>
+
+<c:PostForReviewListForEmails manager="{!recipient.Id}"/>
+
+<p>Please do not reply to this email.</p>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

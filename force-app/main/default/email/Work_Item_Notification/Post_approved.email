@@ -1,6 +1,6 @@
 <messaging:emailTemplate subject="Your post was approved" recipientType="Contact" relatedToType="Post__c">
 <messaging:plainTextEmailBody >
-Dear {recipient.Name},
+Dear {!recipient.Name},
 
 Congratulations!
 Your post {!relatedTo.Name} was approved.

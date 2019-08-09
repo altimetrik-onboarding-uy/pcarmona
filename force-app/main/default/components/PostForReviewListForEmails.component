@@ -1,0 +1,31 @@
+<apex:component controller="PostsForReviewListForEmailsControler" access="global">
+    
+    <apex:attribute name="manager" type="Id" assignTo="{!managerId}" description="Id of the manager"/>
+    
+    <apex:dataTable value="{!postsForReview}" var="postForReview" width="80%" columnsWidth="25%" border="6px">
+        <apex:column >
+            <apex:facet name="header">Name</apex:facet>
+            <apex:outputText value="{!postForReview.name}"/>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Author/Writer</apex:facet>
+            <apex:outputText value="{!postForReview.Author_Writer__r.Name}"/>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Status</apex:facet>
+            <apex:outputText value="{!postForReview.Status__c}"/>
+        </apex:column>
+        <apex:column >
+            <apex:facet name="header">Published Date</apex:facet>
+            <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                <apex:param value="{!postForReview.Published_Date__c}" /> 
+            </apex:outputText>
+        </apex:column>
+    </apex:dataTable>
+    
+    <p>
+        <b>Total posts pending: </b>
+        <apex:outputText value="{!postsForReview.size}"></apex:outputText>
+    </p>
+    
+</apex:component>
